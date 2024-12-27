@@ -35,14 +35,14 @@ public class SettingsTest {
             new ActivityTestRule<>(MainActivity.class);
     @Test
     public void testName() {
-        Intents.init();
+//        Intents.init();
         openActionBarOverflowOrOptionsMenu(InstrumentationRegistry.getInstrumentation().getTargetContext());
         ViewInteraction settings = onView(
                 withText("Settings")
         );
         settings.check(
                 matches(isDisplayed()));
-
+        Intents.init();
         settings.perform(click());
         intended (allOf(
                 hasAction(Intent.ACTION_VIEW),
